@@ -1,0 +1,13 @@
+services:
+  registry:
+    restart: always
+    image: registry:latest
+    ports:
+      - 5000:5000
+    volumes:
+      - ./registry/config.yml:/etc/docker/registry/config.yml:ro
+      - ./data:/var/lib/registry:rw
+  #environment:
+    #- "STANDALONE=true"
+    #- "MIRROR_SOURCE=https://registry-1.docker.io"
+    #- "MIRROR_SOURCE_INDEX=https://index.docker.io"
