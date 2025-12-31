@@ -7,8 +7,8 @@ services:
     volumes:
       - ./registry/config.yml:/etc/docker/registry/config.yml:ro
       - ./data:/var/lib/registry:rw
-  environment:
-    - REGISTRY_HTTP_SECRET=${REGISTRY_HTTP_SECRET}
-    #- "STANDALONE=true"
-    #- "MIRROR_SOURCE=https://registry-1.docker.io"
-    #- "MIRROR_SOURCE_INDEX=https://index.docker.io"
+    environment:
+      - REGISTRY_HTTP_SECRET=${REGISTRY_HTTP_SECRET}
+      #- "STANDALONE=true"
+      #- "MIRROR_SOURCE=https://registry-1.docker.io"
+      #- "MIRROR_SOURCE_INDEX=https://index.docker.io"
