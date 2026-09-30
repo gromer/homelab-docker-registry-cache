@@ -30,5 +30,6 @@ jobs:
 
       - name: Validate Docker Compose configuration
         env:
+          COMPOSE_DISABLE_ENV_FILE: "1"
           REGISTRY_HTTP_SECRET: ci-placeholder
         run: docker compose -f docker-compose.yml config --quiet
